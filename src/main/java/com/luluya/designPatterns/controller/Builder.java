@@ -53,7 +53,8 @@ interface PersonBuilder {
 class ManBuilder implements PersonBuilder {
     private Person person;
     public ManBuilder() {
-        person = new Person();//创建一个Person实例,用于调用set方法
+        //创建一个Person实例,用于调用set方法
+        person = new Person();
     }
     @Override
     public void builderHead() {

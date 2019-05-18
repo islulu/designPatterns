@@ -15,7 +15,11 @@ public class CglibProxy implements MethodInterceptor {
 
     private Object targetObject;
 
-    // 这里的目标类型为Object，则可以接受任意一种参数作为被代理类，实现了动态代理
+    /**
+     * 这里的目标类型为Object，则可以接受任意一种参数作为被代理类，实现了动态代理
+     * @param target
+     * @return
+     */
     public Object getInstance(Object target) {
         // 设置需要创建子类的类
         this.targetObject = target;

@@ -10,12 +10,21 @@ import java.lang.reflect.Proxy;
  * @author jairy
  * @date 2019/5/17
  */
-// 每次生成动态代理类对象时,实现了InvocationHandler接口的调用处理器对象
+
+/**
+ * 每次生成动态代理类对象时,实现了InvocationHandler接口的调用处理器对象
+ */
 public class InvocationHandlerImpl implements InvocationHandler {
 
-    private Object target;// 这其实业务实现类对象，用来调用具体的业务方法
+    /**
+     * 这其实业务实现类对象，用来调用具体的业务方法
+     */
+    private Object target;
 
-    // 通过构造函数传入目标对象
+    /**
+     * 通过构造函数传入目标对象
+     * @param target
+     */
     public InvocationHandlerImpl(Object target) {
         this.target = target;
     }

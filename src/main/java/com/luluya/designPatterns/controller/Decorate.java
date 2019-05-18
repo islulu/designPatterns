@@ -7,7 +7,9 @@ package com.luluya.designPatterns.controller;
  */
 public class Decorate {
 }
-//房屋基础接口
+/**
+ * 房屋基础接口
+ */
 interface House {
     void run();
 }
@@ -16,7 +18,9 @@ class HouseImpl implements House{
     public void run() {
     }
 }
-//房屋装饰类
+/**
+ * 房屋装饰类
+ */
 class HouseDecorate implements House {
     private House house;
     public HouseDecorate(House house){

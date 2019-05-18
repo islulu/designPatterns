@@ -42,7 +42,7 @@ public class ReflectionTest {
             System.out.println(field.getName());
         }
 
-        System.out.println("------------------");
+        System.out.println("--------私有构造函数保护----------");
         // 8.使用反射机制创建对象(破坏单例的私有构造函数保护
         Constructor c0 = forName.getDeclaredConstructor();
         c0.setAccessible(true);

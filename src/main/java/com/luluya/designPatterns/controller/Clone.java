@@ -9,13 +9,14 @@ import java.util.ArrayList;
  */
 public class Clone {
 }
-/*
+/**
  * 书本类型，扮演的是ConcretePrototype角色，而Cloneable扮演Prototype角色
  */
 class Book implements Cloneable {
-
-    private String title;// 标题
-    private ArrayList<String> image = new ArrayList<String>();// 图片名列表
+    // 标题
+    private String title;
+    // 图片名列表
+    private ArrayList<String> image = new ArrayList<>();
 
     public Book() {
         super();
@@ -27,8 +28,10 @@ class Book implements Cloneable {
     @Override
     protected Book clone() {
         try {
-            Book book = (Book) super.clone();//浅拷贝，默认是浅拷贝
-            book.image=(ArrayList<String>)this.image.clone();//深复制
+            //浅拷贝，默认是浅拷贝
+            Book book = (Book) super.clone();
+            //深复制
+            book.image=(ArrayList<String>)this.image.clone();
             return book;
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();

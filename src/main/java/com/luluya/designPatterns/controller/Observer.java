@@ -7,7 +7,9 @@ import java.util.List;
  * @author jairy
  * @date 2019/5/18
  */
-//观察者的接口，用来存放观察者共有方法
+/**
+ * 观察者的接口，用来存放观察者共有方法
+ */
 public interface Observer {
     // 观察者方法
     void update(Subjecct subjecct);
@@ -22,37 +24,51 @@ class ObserverA implements Observer{
     }
 }
 
-//观察对象的父类
+/**
+ * 观察对象的父类
+ */
 class Subjecct {
-    //观察者的存储集合
+    /**
+     * 观察者的存储集合
+     */
     private List<Observer> list = new ArrayList<>();
-
-    // 注册观察者方法
+    /**
+     * 注册观察者方法
+     * @param obs
+     */
     public void registerObserver(Observer obs) {
         list.add(obs);
     }
-    // 删除观察者方法
+    /**
+     * 删除观察者方法
+     * @param obs
+     */
     public void removeObserver(Observer obs) {
         list.remove(obs);
         this.notifyAllObserver();
     }
-
-    // 通知所有的观察者更新
+    /**
+     * 通知所有的观察者更新
+     */
     public void notifyAllObserver() {
         for (Observer observer : list) {
             observer.update(this);
         }
     }
-
 }
-//具体观察者对象的实现
+
+/**
+ * 具体观察者对象的实现
+ */
 class RealObserver extends Subjecct {
-    //被观察对象的属性
+    /**
+     * 被观察对象的属性
+     */
     private int state;
     public int getState(){
         return state;
     }
-    public void  setState(int state){
+    public void setState(int state){
         this.state=state;
         //主题对象(目标对象)值发生改变
         this.notifyAllObserver();

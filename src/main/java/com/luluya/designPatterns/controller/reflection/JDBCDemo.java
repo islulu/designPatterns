@@ -16,16 +16,19 @@ public class JDBCDemo {
         String url = "jdbc:mysql://192.168.1.150/test";
         String user = "teamtalk";
         String password = "123456";
-        Connection connection = (Connection) DriverManager.getConnection(
+        Connection connection = DriverManager.getConnection(
                 url, user, password);
 
-        PreparedStatement statement = (PreparedStatement) connection.prepareStatement(
+        //组装sql
+        PreparedStatement statement = connection.prepareStatement(
                 "insert persion (name, age) value (?, ?)");
         statement.setString(1, "hdu");
         statement.setInt(2, 21);
         statement.executeUpdate();
 
+        //执行sql
         ResultSet resultSet = statement.executeQuery("select * from persion");
+
         // 操作ResultSet结果集
         while (resultSet.next()) {
             // 第一种获取字段方式
@@ -37,7 +40,6 @@ public class JDBCDemo {
         resultSet.close();
         statement.close();
         connection.close();
-
     }
 
 }
