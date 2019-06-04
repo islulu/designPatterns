@@ -1,7 +1,7 @@
 package com.luluya.designPatterns.controller;
 
 /**
- * 装饰器模式
+ * 装饰模式
  * @author jairy
  * @date 2019/5/18
  */
@@ -23,23 +23,28 @@ class HouseImpl implements House{
  */
 class HouseDecorate implements House {
     private House house;
+
     public HouseDecorate(House house){
         this.house=house;
     }
+
     @Override
     public void run() {
         house.run();
     }
+
 }
 class HouseDecorateImpl extends HouseDecorate {
     public HouseDecorateImpl(House house) {
         super(house);
     }
+
     @Override
     public void run() {
         super.run();
         System.out.println("贴上墙纸..");
     }
+
 }
 
 class ClientTest {

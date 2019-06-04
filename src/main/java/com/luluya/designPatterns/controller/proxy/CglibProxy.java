@@ -37,6 +37,7 @@ public class CglibProxy implements MethodInterceptor {
         // 返回代理对象
         return result;
     }
+
     public static void main(String[] args) {
         CglibProxy cglibProxy = new CglibProxy();
         UserDao userDao = (UserDao) cglibProxy.getInstance(new UserDao());

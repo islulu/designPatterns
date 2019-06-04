@@ -10,13 +10,14 @@ public class FacadePattern {
 interface EamilSmsService {
     public void sendSms();
 }
-class EamilSmsServiceImpl implements  EamilSmsService{
+class EamilSmsServiceImpl implements EamilSmsService{
     @Override
     public void sendSms() {
         System.out.println("发送邮件消息");
 
     }
 }
+
 //微信消息推送
 interface WeiXinSmsService {
     public void sendSms();
@@ -28,6 +29,7 @@ class WeiXinSmsServiceImpl implements WeiXinSmsService {
 
     }
 }
+
 //阿里短信消息
 interface AliSmsService {
     public void sendSms();

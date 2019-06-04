@@ -16,12 +16,14 @@ class StrategyA extends Strategy {
         System.out.println("算法A");
     }
 }
+
 class StrategyB extends Strategy {
     @Override
     void algorithmInterface() {
         System.out.println("算法B");
     }
 }
+
 class StrategyC extends Strategy {
     @Override
     void algorithmInterface() {
@@ -32,14 +34,17 @@ class StrategyC extends Strategy {
 // 使用上下文维护算法策略
 class Context {
     Strategy strategy;
+
     public Context(Strategy strategy) {
         this.strategy = strategy;
     }
+
     public void algorithmInterface() {
         strategy.algorithmInterface();
     }
 }
 class ClientTestStrategy {
+
     public static void main(String[] args) {
         Context context;
         context = new Context(new StrategyA());
@@ -49,4 +54,5 @@ class ClientTestStrategy {
         context = new Context(new StrategyC());
         context.algorithmInterface();
     }
+
 }
